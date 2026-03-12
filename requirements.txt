@@ -1,7 +1,8 @@
 streamlit
 tensorflow==2.13.0
+keras==2.13.1
+numpy==1.24.3
 opencv-python-headless
-numpy
 torch
 torchvision
 pillow
