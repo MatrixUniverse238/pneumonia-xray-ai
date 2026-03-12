@@ -1,17 +1,14 @@
 import numpy as np
 import cv2
 import tensorflow as tf
-import streamlit as st
+from tensorflow.keras.models import load_model
 
+# force legacy keras compatibility
+tf.keras.utils.get_custom_objects()
 
-@st.cache_resource
-def load_tf_model():
-    tf.keras.models.load_model("virus_model_streamlit.h5", compile=False)
-
+model = load_model("virus_model.h5", compile=False)
 
 def predict_tf(image):
-
-    model = load_tf_model()
 
     img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     img = cv2.resize(img, (150,150))
