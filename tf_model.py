@@ -6,7 +6,7 @@ import streamlit as st
 
 @st.cache_resource
 def load_tf_model():
-    return tf.keras.models.load_model("virus_model.h5", compile=False)
+    tf.keras.models.load_model("virus_model_streamlit.h5", compile=False)
 
 
 def predict_tf(image):
